@@ -1,0 +1,84 @@
+.music-btn {
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(60,60,60,0.10);
+    margin-bottom: 18px;
+    transition: background 0.3s, transform 0.2s;
+}
+.music-btn:hover {
+    background: #222;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.container {
+    background: #333;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 100px 200px;
+    max-width: 400px;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.main-video {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 24px auto;
+    box-shadow: 0 4px 16px rgba(60,60,60,0.12);
+    background: #eee;
+    display: block;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 12px;
+    letter-spacing: 0px;
+}
+
+.subtitle {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 24px;
+}
+
+.music {
+    width: 100%;
+    margin-top: 12px;
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 24px 8px;
+        max-width: 95vw;
+    }
+    .main-img {
+        width: 80px;
+        height: 80px;
+    }
+    .title {
+        font-size: 1.3rem;
+    }
+}

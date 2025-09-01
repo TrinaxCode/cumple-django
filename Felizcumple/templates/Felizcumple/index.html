@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cumpleaños</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3468/3468379.png">
+    <link rel="stylesheet" href="{% static 'Felizcumple/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% if is_birthday %}
+        <video class="main-video" src="{% static 'items/ua.mp4' %}" autoplay loop muted playsinline></video>
+        <h1 class="title">¡HOY ES MI CUMPLEAÑOS!</h1>
+        <p class="subtitle">ig=TrinaxCode</p>
+        <button id="play-music-btn" class="music-btn">🎵 Activar música</button>
+        <audio id="musica-fondo-birthday" loop class="music" style="display:none;">
+                <source src="{% static 'items/ua.mp3' %}" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        {% else %}
+        <video class="main-video" src="{% static 'items/pollo.mp4' %}" autoplay loop muted playsinline></video>
+        <h1 class="title">HOY NO ES MI CUMPLEAÑOS 😔</h1>
+        <p class="subtitle">Vuelve el 14 de octubre</p>
+        <button id="play-music-btn" class="music-btn">🎵 Activar música</button>
+        <audio id="musica-fondo-nobirthday" loop class="music" style="display:none;">
+            <source src="{% static 'items/12.mp3' %}" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        {% endif %}
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            var btn = document.getElementById('play-music-btn');
+            var audioBirthday = document.getElementById('musica-fondo-birthday');
+            var audioNoBirthday = document.getElementById('musica-fondo-nobirthday');
+            var audio = audioBirthday || audioNoBirthday;
+            if (btn && audio) {
+                btn.addEventListener('click', function() {
+                    audio.volume = 0.5;
+                    audio.play();
+                    btn.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
